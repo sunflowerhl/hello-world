@@ -24,6 +24,12 @@ pip install -r requirements.txt
 
 > Windows 11 默认缺少 IANA 时区数据库，`requirements.txt` 中包含的 `tzdata` 会在安装依赖时一并补齐，保证 `zoneinfo` 可以正常工作。
 
+如果在运行脚本时看到 `ModuleNotFoundError: No module named 'mplfinance'` 或类似提示，请确认已经在激活虚拟环境后执行过 `pip install -r requirements.txt`，或单独安装缺失的依赖：
+
+```powershell
+pip install mplfinance
+```
+
 ## 准备交易数据
 
 将交易截图中的信息（时间、成交价格、买入或卖出方向，可选备注与数量）整理成CSV或JSON文件。

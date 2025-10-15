@@ -8,6 +8,13 @@ import json
 from pathlib import Path
 from typing import Iterable, List, Optional
 
+import importlib.util
+
+if importlib.util.find_spec("mplfinance") is None:
+    raise SystemExit(
+        "未检测到 mplfinance，请先运行 'pip install -r requirements.txt' 安装依赖后再重试。"
+    )
+
 import matplotlib.pyplot as plt
 import mplfinance as mpf
 import pandas as pd
