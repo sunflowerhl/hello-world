@@ -4,11 +4,25 @@
 
 ## 环境准备
 
+Linux/macOS:
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+
+Windows PowerShell（例如在 VS/VS Code 终端内）：
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+如果使用经典命令提示符 (cmd)，激活命令改为 `\.venv\Scripts\activate.bat`。
+
+> Windows 11 默认缺少 IANA 时区数据库，`requirements.txt` 中包含的 `tzdata` 会在安装依赖时一并补齐，保证 `zoneinfo` 可以正常工作。
 
 ## 准备交易数据
 
